@@ -1220,15 +1220,15 @@ function Contact() {
             Get In Touch
           </p>
 
-          <motion.h2
-            style={{ y: headlineY }}
-            className="font-light leading-[0.86] tracking-[-0.03em] mb-12 max-w-5xl"
-            style={{
-              fontFamily: "var(--font-display)",
-              color: "#f6f1e9",
-              fontSize: "clamp(58px, 11vw, 140px)",
-            }}
-          >
+<motion.h2
+  style={{
+    y: headlineY,
+    fontFamily: "var(--font-display)",
+    color: "#f6f1e9",
+    fontSize: "clamp(58px, 11vw, 140px)",
+  }}
+  className="font-light leading-[0.86] tracking-[-0.03em] mb-12 max-w-5xl"
+>
             Let&rsquo;s build
             <br />
             <span style={{ color: "#b8833c", fontStyle: "italic" }}>
