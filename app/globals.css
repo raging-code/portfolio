@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    font-family: var(--font-inter), sans-serif;
+    background: #ffffff;
+    color: #0a0a0a;
+    overflow-x: hidden;
+  }
+
+  /* Hide default cursor on non-touch */
+  @media (pointer: fine) {
+    * { cursor: none !important; }
+  }
+
+  /* Show cursor on touch */
+  @media (pointer: coarse) {
+    * { cursor: auto !important; }
+  }
+
+  /* Smooth scroll offset for fixed nav */
+  section[id] {
+    scroll-margin-top: 80px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
